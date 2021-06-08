@@ -30,15 +30,7 @@ if __name__ == '__main__':
     # import dataset, define IV's and DV
     # VIF expects a constant, add constant
     df = pd.read_csv(config.CLEAN_DATA)
-    target = df['GDP_growth']
     features = df.drop(['GDP_growth'], axis=1)
     features = sm.tools.add_constant(features)
     print(multicollinearity(features))
-
-# Dropped Final_consumption_gdp
-# Dropped Birth_rate
-# Dropped Gross_capital
-# Dropped Pop_growth
-# Dropped Hh_consumption_growth
-# Dropped Unemployment
-# Dropped const
+    # Index(['Broad_money_growth', 'Gov_consumtion_growth','Gross_capital_formation_growth'],

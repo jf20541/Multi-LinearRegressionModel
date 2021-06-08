@@ -1,30 +1,27 @@
-# def clean_header(df):
-# 	"""
-# 	This functions removes weird characters and spaces from column names, while keeping everything lower case
-# 	"""
-#     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
-
-
-
-
-# https://towardsdatascience.com/automate-boring-tasks-with-your-own-functions-a32785437179
 import pandas as pd
 import config
-df = pd.DataFrame(pd.read_excel(config.TRAINING_FILE))
-print(df.columns)
-print(df.dtypes)
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
 
 
+def plot_data(x):
+    x.boxplot(column=['Broad_money_growth', 'Gov_consumtion_growth','Gross_capital_formation_growth', 'Hh_consumption_growth'])
+    plt.title('Box PLot Features')
+    plt.show()
 
+def zscore(x):
+    # finding outliers 3-SD from mean 
+    outliers = x[(np.abs(stats.zscore(x)) < 3).all(axis=1)]
+    print(x.index.difference(outliers.index))
 
-
-
-
-# Defining the function that you will run later
-# def calculate_vif_(X):
-#     vif = pd.DataFrame()
-#     vif['variables'] = X.columns
-#     vif['VIF'] = [variance_inflation_factor(X.values, ix) for ix in range(X.shape[1])]
-#     return vif 
-
-# print(calculate_vif_(clean_feat))
+if __name__ == '__main__':
+    df = pd.read_csv(config.CLEAN_DATA)
+    X = df[['Broad_money_growth', 'Gov_consumtion_growth','Gross_capital_formation_growth', 'Hh_consumption_growth']]
+    plot_data(X)
+    zscore(X)
+    # Index([1998, 2001]
+    # 1998: During the Asian-financial crisis (financial contagion)
+    # 2001: Slowing global economy
+    
