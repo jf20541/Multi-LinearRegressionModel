@@ -14,6 +14,13 @@ Metrics: Adjusted R-Square is used to explain the degree to which predictor vari
 - `Hh_consumption_growth (Annual % Growth)`: Value of all goods&services, purchased by households.
 - `Pop_growth (Annual %)`: Increase in the number of individuals in a population
 
+### Code
+
+Created 4 modules
+- `assumptions.py`: Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
+- `model.py`: Used OLS Multi Regression Model and loaded to parameters to pickle file
+- `data.py`: Cleaned xlsx file and covert to pandas DataFrame
+- `plot.py`: Plot the all assumptions 
 
 ### Install
 This project requires **Python 3.7** and the following Python libraries installed:
@@ -22,15 +29,6 @@ This project requires **Python 3.7** and the following Python libraries installe
 - [StatsModel](https://www.statsmodels.org/stable/index.html)
 - [Scipy](https://www.scipy.org/)
 - [Matplotlib](https://matplotlib.org/)
-
-
-### Code
-
-Created 4 modules
-- `assumptions.py`: Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
-- `model.py`: Used OLS Multi Regression Model and loaded to parameters to pickle file
-- `data.py`: Cleaned xlsx file and covert to pandas DataFrame
-- `plot.py`: Plot the all assumptions 
 
 ### Run
 
