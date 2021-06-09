@@ -43,6 +43,7 @@ if __name__ == '__main__':
     zscore(X)
     autocorrelation(est)
     qqplot(est.resid)
+    plt.show()
 
     # Index([1998, 2001]
     # 1998: During the Asian-financial crisis (financial contagion)

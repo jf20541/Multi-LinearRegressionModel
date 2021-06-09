@@ -7,7 +7,7 @@ import pickle
 def deploy_model(data):
     """
     Parameters: define DV and selected IV's after assumptions
-    return: summary of model 
+    Return: summary of model 
     """
     target = data['GDP_growth']
     new_features = data[['Broad_money_growth', 'Gov_consumtion_growth','Gross_capital_formation_growth', 'Hh_consumption_growth', 'Pop_growth']]

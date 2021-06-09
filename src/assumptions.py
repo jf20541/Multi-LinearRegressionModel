@@ -5,7 +5,7 @@ from statsmodels.stats.diagnostic import het_breuschpagan, acorr_ljungbox, norma
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 """
-Mlticollinearity using Variance Inflation Factor
+Variance Inflation Factor Test for Mlticollinearity
 Breusch–Pagan Test for residuals homoscedastic
 Ljung-Box Test for Autocorrelation presence 
 Anderson-Darling test for normal distribution
