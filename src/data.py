@@ -8,16 +8,17 @@ def clean_data(data):
     Parameters: data as pandas dataframe
     Returns: clean dataset and convert to csv file
     """
-    data = data.set_index('Year')
+    data = data.set_index("Year")
     data = data.astype(float)
 
     if data.isnull().values.any() == False:
-        print('No Null-Values found')
+        print("No Null-Values found")
     else:
         print("Null-Values found and fillna")
 
     data.to_csv(config.CLEAN_DATA, index_label=False)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     df = pd.DataFrame(pd.read_excel(config.TRAINING_FILE))
     clean_data(df)
