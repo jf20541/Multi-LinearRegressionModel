@@ -1,11 +1,28 @@
 # MultiRegressionModel
 
-### Goal
-Multi-Regression Model is the relationship between multiple predictor variables to a dependent variable.
-Metrics: Adjusted R-Square is used to explain the degree to which predictor variables explain the variation of dependent variable.
+## Objective
+Multiple Regression Model is the relationship between multiple independent variables to a dependent variable\
 
+Metrics: Adjusted R-Square is used to explain the degree to which predictor variables explain the variation of dependent variable while penalizing an increase of independent varibles\
+
+Assumptions: Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
+
+### Output 
+```bash
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             GDP_growth   R-squared:                       0.892
+Model:                            OLS   Adj. R-squared:                  0.880
+Method:                 Least Squares   F-statistic:                     71.08
+Date:                Thu, 10 Jun 2021   Prob (F-statistic):           1.13e-19
+Time:                        11:48:40   Log-Likelihood:                -84.898
+No. Observations:                  49   AIC:                             181.8
+Df Residuals:                      43   BIC:                             193.1
+Df Model:                           5                                         
+``` 
 ### Target
-- `GDP_growth (Annual %)`: Rate compares the year-over-year change in a country's economic output. GDP = Consumption + Investment + Government Spending + Net Exports
+- `GDP_growth (Annual %)`: Rate compares the year-over-year change in a country's economic output
+- GDP = Consumption + Investment + Government Spending + Net Exports
 
 ### Selected Variables
 - `Broad_money_growth (Annual %)`: Measures economy's money supply (cash and other assets easily liquidated)
@@ -15,35 +32,26 @@ Metrics: Adjusted R-Square is used to explain the degree to which predictor vari
 - `Pop_growth (Annual %)`: Increase in the number of individuals in a population
 
 ### Code
-
 Created 4 modules
 - `assumptions.py`: Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
-- `model.py`: Used OLS Multi Regression Model and loaded to parameters to pickle file
+- `main.py`: Used OLS Multi Regression Model and loaded to parameters to pickle file
 - `data.py`: Cleaned xlsx file and covert to pandas DataFrame
-- `plot.py`: Plot the all assumptions 
+- `plot.py`: Plot Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test Assumptions
 
 ### Install
-This project requires **Python 3.7** and the following Python libraries installed:
-
 - [Pandas](http://pandas.pydata.org)
 - [StatsModel](https://www.statsmodels.org/stable/index.html)
 - [Scipy](https://www.scipy.org/)
 - [Matplotlib](https://matplotlib.org/)
 
 ### Run
-
-In a terminal or command window, navigate to the top-level project directory `MultiRegressionModel/` and run one of the following commands:
-
+In a terminal or command window, navigate to the top-level project directory `MultiRegressionModel/` and run one of the following command:
 ```bash
-pip install --upgrade pip
-``` 
-```bash
-pip install -r requirements.txt
+pip install --upgrade pip && pip install -r requirements.txt
 ``` 
 
 ### Data
-
-Data collected from the [WORLD BANK](https://data.worldbank.org/) with the following variables
+Features collected from [WORLD BANK](https://data.worldbank.org/)
 - GDP_growth
 - Gross_capital
 - Pop_growth
@@ -54,3 +62,5 @@ Data collected from the [WORLD BANK](https://data.worldbank.org/) with the follo
 - Gross_capital_formation_growth
 - Hh_consumption_growth
 - Unemployment
+
+## Sources
