@@ -2,7 +2,7 @@
 
 ## Objective
 Multiple Regression Model is the relationship between multiple independent variables to a dependent variable\
-
+![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20%5Cbg_white%20%5CLARGE%20Y_%7Bi%7D%20%3D%20%5Cbeta%20_%7B0%7D%20&plus;%20%5Cbeta%20_%7B1%7DX_%7B1%2C%20i%7D%20&plus;%20...%20&plus;%20%5Cbeta%20_%7Bk%7DX_%7Bk%2C%20i%7D%20&plus;%20%5Cepsilon%20_%7Bi%7D%2C%20i%3D1%2C...%2Cn)\
 Metrics: Adjusted R-Square is used to explain the degree to which predictor variables explain the variation of dependent variable while penalizing an increase of independent varibles\
 
 Assumptions: Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
