@@ -38,12 +38,6 @@ Created 4 modules
 - `data.py`: Cleaned xlsx file and covert to pandas DataFrame
 - `plot.py`: Plot Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test Assumptions
 
-### Install
-- [Pandas](http://pandas.pydata.org)
-- [StatsModel](https://www.statsmodels.org/stable/index.html)
-- [Scipy](https://www.scipy.org/)
-- [Matplotlib](https://matplotlib.org/)
-
 ### Run
 In a terminal or command window, navigate to the top-level project directory `MultiRegressionModel/` and run one of the following command:
 ```bash
