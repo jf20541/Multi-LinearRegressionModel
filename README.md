@@ -26,7 +26,7 @@ Df Model:                           5
 
 ## Data
 Features collected from [WORLD BANK](https://data.worldbank.org/)
-```bash
+```
 Target 
 - GDP_growth (Annual %): Rate compares the year-over-year change in a country's economic output
 
