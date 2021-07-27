@@ -8,6 +8,22 @@ GDP = Consumption + Investment + Government Spending + Net Exports
 
 **Assumptions:** Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test\
 
+## Repository File Structure
+    ├── src          
+    │   ├── main.py              # Multi Regression Model and loaded to parameters to pickle file
+    │   ├── assumptions.py       # Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
+    │   ├── data.py              # Cleaned xlsx file and covert to pandas DataFrame
+    │   ├── plot.py              # Plot Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test Assumptionss
+    │   └── config.py            # Define path as global variable
+    ├── inputs
+    │   ├── clean_data.csv       # Cleaned file
+    │   └── korea_data.xlsx      # Korea Economic data
+    ├── plot
+    │   ├── Autocorrelation.png  # Autocorrelation on data
+    │   ├── BoxPlot.png          # Boxplot Features
+    │   └── ResidualMean.png     # Residual Mean
+    ├── requierments.txt         # Packages used for project
+    └── README.md
 
 ## Output 
 ```bash
@@ -37,9 +53,3 @@ Features
 - Gross_capital_formation_growth (% of GDP): Measured by the total value of the gross fixed capital formation
 - Hh_consumption_growth (Annual % Growth): Value of all goods&services, purchased by households.
 ```
-
-## Code
-- `assumptions.py`: Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
-- `main.py`: Used OLS Multi Regression Model and loaded to parameters to pickle file
-- `data.py`: Cleaned xlsx file and covert to pandas DataFrame
-- `plot.py`: Plot Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test Assumptions
