@@ -53,3 +53,44 @@ Features
 - Gross_capital_formation_growth (% of GDP): Measured by the total value of the gross fixed capital formation
 - Hh_consumption_growth (Annual % Growth): Value of all goods&services, purchased by households.
 ```
+
+# LinearRegressionAssets
+
+## Objective
+Linear Regression Model is the relationship between an independent variable (MSFT) to a dependent variable (SPY). Calculate the beta coefficient to measure the volatility of an individual stock compared to the systematic risk of the entire market.\
+![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20%5Cbg_white%20%5CLARGE%20Y_%7Bi%7D%20%3D%20%5Cbeta%20_%7B0%7D%20&plus;%20%5Cbeta%20_%7B1%7DX_%7Bi%7D%20&plus;%20%5Cepsilon_%7Bi%7D)
+
+Metrics: R-Square measure the proportion of the variance for a dependent variable that's explained by an independent variable in a regression model\
+Metrics: Mean Sqaured Error and Mean Absolute Error
+
+Assumptions:\
+![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20%5Cbg_white%20%5CLARGE%20%5Cepsilon%20_%7Bi%7D%20%5Csim%20N%280%2C%20%5Csigma%20_%7B%5Cepsilon%20%7D%5E%7B2%7D%29)
+
+## Output 
+```bash
+Slope: 1.47 and Intercept: 78.83
+
+MSE 9.14e+02
+MAE 25.8
+RMSE 30.2
+R2: 0.87
+```
+```
+Target
+- S&P500 Index Fund: Index of 500 of the largest companies listed on US stock exchanges (Adjusted-Closing Price)
+
+Feature
+- Microsoft (MSFT): Adjusted-Closing Price
+```
+
+## Repository File Structure
+    ├── src          
+    │   ├── main.py              # Initiating Linear Regression Model
+    │   ├── metrics.py           # Calculating metrics (R-Squared, MSE, MAE) 
+    │   ├── data.py              # Extracted Adj-Closing price from YFinance
+    │   └── config.py            # Define path as global variable
+    ├── inputs
+    │   └── train.csv            # Adj-Closing Price for MSFT and SPY 
+    ├── requierments.txt         # Packages used for project
+    └── README.md
+
