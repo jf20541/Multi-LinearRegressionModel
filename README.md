@@ -6,17 +6,22 @@ GDP = Consumption + Investment + Government Spending + Net Exports
 ![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20%5Cbg_white%20%5CLARGE%20Y_%7Bi%7D%20%3D%20%5Cbeta%20_%7B0%7D%20&plus;%20%5Cbeta%20_%7B1%7DX_%7B1%2C%20i%7D%20&plus;%20...%20&plus;%20%5Cbeta%20_%7Bk%7DX_%7Bk%2C%20i%7D%20&plus;%20%5Cepsilon%20_%7Bi%7D%2C%20i%3D1%2C...%2Cn)\
 **Metrics:** Adjusted R-Square is used to explain the degree to which predictor variables explain the variation of dependent variable while penalizing an increase of independent varibles
 
-**Assumptions:** Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test\
+**Assumptions:** Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
 
 ## Repository File Structure
     ├── src          
-    │   ├── main.py              # Multi Regression Model and loaded to parameters to pickle file
-    │   ├── assumptions.py       # Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
-    │   ├── data.py              # Cleaned xlsx file and covert to pandas DataFrame
-    │   ├── plot.py              # Plot Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test Assumptionss
-    │   └── config.py            # Define path as global variable
+    │   ├── MR_main.py              # Multi Regression Model and loaded to parameters to pickle file
+    │   ├── MR_assumptions.py       # Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test
+    │   ├── MR_data.py              # Cleaned xlsx file and covert to pandas DataFrame
+    │   ├── MR_plot.py              # Plot Variance Inflation Factor, Breusch–Pagan, Ljung-Box, Anderson-Darling Test Assumptionss
+    │   ├── MR_config.py            # Define path as global variable
+    │   ├── LR_main.py              # Initiating Linear Regression Model
+    │   ├── LR_metrics.py           # Calculating metrics (R-Squared, MSE, MAE) 
+    │   ├── LR_data.py              # Extracted Adj-Closing price from YFinance
+    │   └── LR_config.py            # Define path as global variable
     ├── inputs
     │   ├── clean_data.csv       # Cleaned file
+    │   ├── clean_data.csv       # Cleaned file for Linear Regression Assets
     │   └── korea_data.xlsx      # Korea Economic data
     ├── plot
     │   ├── Autocorrelation.png  # Autocorrelation on data
@@ -82,15 +87,3 @@ Target
 Feature
 - Microsoft (MSFT): Adjusted-Closing Price
 ```
-
-## Repository File Structure
-    ├── src          
-    │   ├── main.py              # Initiating Linear Regression Model
-    │   ├── metrics.py           # Calculating metrics (R-Squared, MSE, MAE) 
-    │   ├── data.py              # Extracted Adj-Closing price from YFinance
-    │   └── config.py            # Define path as global variable
-    ├── inputs
-    │   └── train.csv            # Adj-Closing Price for MSFT and SPY 
-    ├── requierments.txt         # Packages used for project
-    └── README.md
-
