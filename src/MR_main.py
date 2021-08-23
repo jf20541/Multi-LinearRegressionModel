@@ -1,13 +1,15 @@
 import pandas as pd
-import config
+import MR_config
 import statsmodels.api as sm
 import pickle
 
 
 def deploy_model(data):
-    """
-    Parameters: define DV and selected IV's after assumptions
-    Return: summary of model
+    """Deploying Mult-Reg Summry
+    Args:
+        data ([dataframe]): define DV and selected IV's after assumptions
+    Returns:
+        [object]: summary of model
     """
     target = data["GDP_growth"]
     new_features = data[
@@ -24,11 +26,11 @@ def deploy_model(data):
     est = model.fit()
 
     # save model
-    with open(config.MODEL, "wb") as f:
+    with open(MR_config.MODEL, "wb") as f:
         pickle.dump(model, f)
     return est.summary()
 
 
 if __name__ == "__main__":
-    df = pd.DataFrame(pd.read_excel(config.TRAINING_FILE))
+    df = pd.DataFrame(pd.read_excel(MR_config.TRAINING_FILE))
     print(deploy_model(df))

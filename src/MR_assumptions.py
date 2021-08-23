@@ -1,5 +1,5 @@
 import pandas as pd
-import config
+import MR_config
 import statsmodels.api as sm
 from statsmodels.stats.diagnostic import het_breuschpagan, acorr_ljungbox, normal_ad
 from statsmodels.stats.outliers_influence import variance_inflation_factor
@@ -80,7 +80,7 @@ def andersondarling(errors):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv(config.CLEAN_DATA)
+    df = pd.read_csv(MR_config.CLEAN_DATA)
     target = df["GDP_growth"]
     features = df.drop("GDP_growth", axis=1)
     new_features = df[

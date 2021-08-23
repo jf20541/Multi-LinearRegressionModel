@@ -1,10 +1,9 @@
 import pandas as pd
-import config
-import seaborn as sns
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 from scipy import stats
 import statsmodels.api as sm
+import MR_config
 
 
 def plot_data(x):
@@ -40,9 +39,9 @@ def qqplot(errors):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv(config.CLEAN_DATA)
+    df = pd.read_csv(MR_config.CLEAN_DATA)
     target = df["GDP_growth"]
-    X = df[
+    featuers = df[
         [
             "Broad_money_growth",
             "Gov_consumtion_growth",
@@ -55,8 +54,8 @@ if __name__ == "__main__":
     model = sm.OLS(target, features)
     est = model.fit()
 
-    plot_data(X)
-    zscore(X)
+    plot_data(featuers)
+    zscore(featuers)
     autocorrelation(est)
     qqplot(est.resid)
     plt.show()
